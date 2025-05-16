@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkinCareAiIntegration.MainPage"
+             BackgroundColor="White">
+
+    <VerticalStackLayout Padding="20" Spacing="20" HorizontalOptions="Center">
+
+
+     
+
+        <Label Text="Camera Preview"
+               HorizontalOptions="Center"
+               FontAttributes="Bold"
+               FontSize="20" />
+
+        <Frame BorderColor="Gray"
+               CornerRadius="10"
+               Padding="0"
+               HasShadow="True"
+               HeightRequest="500"
+               WidthRequest="700"
+               HorizontalOptions="Center">
+            <Image x:Name="CameraPreview"
+                   WidthRequest="640"
+                   HeightRequest="480"
+                   Aspect="AspectFill" />
+        </Frame>
+
+        <Label x:Name="FaceDetectionLabel"
+               Text="No face detected"
+               FontSize="18"
+               TextColor="Black"
+               HorizontalOptions="Center" />
+
+        <HorizontalStackLayout Spacing="15" HorizontalOptions="Center">
+            <Button Text="Capture Photo" Clicked="OnCapturePhotoClicked" />
+            <Button Text="Analyze Skin" Clicked="OnAnalyzeSkinClicked" />
+            <Button x:Name="CameraButton"
+         Text="Start Camera"
+         Clicked="OnStartCameraClicked"
+         WidthRequest="200" />
+        </HorizontalStackLayout>
+       
+    </VerticalStackLayout>
+
+</ContentPage>
