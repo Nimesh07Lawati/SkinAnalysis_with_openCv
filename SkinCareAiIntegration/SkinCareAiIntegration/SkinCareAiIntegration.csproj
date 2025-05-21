@@ -38,6 +38,10 @@
 		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
 	</PropertyGroup>
 
+	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net8.0-android|AnyCPU'">
+	  <AndroidPackageFormat>apk</AndroidPackageFormat>
+	</PropertyGroup>
+
 	<ItemGroup>
 		<!-- App Icon -->
 		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
@@ -57,6 +61,16 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="data\RFB-320.bin" />
+	  <None Remove="data\RFB-320.param" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="data\RFB-320.bin" />
+	  <EmbeddedResource Include="data\RFB-320.param" />
+	</ItemGroup>
+
+	<ItemGroup>
 		<PackageReference Include="Emgu.CV" Version="4.10.0.5680" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -65,6 +79,7 @@
 		<PackageReference Include="OpenCvSharp4.Extensions" Version="4.11.0.20250507" />
 		<PackageReference Include="OpenCvSharp4.runtime.win" Version="4.11.0.20250507" />
 		<PackageReference Include="OpenCvSharp4.Windows" Version="4.11.0.20250507" />
+		<PackageReference Include="UltraFaceDotNet.Xamarin" Version="1.0.0.2" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="opencv\*.dll">
@@ -86,7 +101,7 @@
 
 
 	<ItemGroup>
-	  <MauiXaml Update="AndroidAiSetUp\MainView.xaml">
+	  <MauiXaml Update="ForAndroid\AndroidCameraView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

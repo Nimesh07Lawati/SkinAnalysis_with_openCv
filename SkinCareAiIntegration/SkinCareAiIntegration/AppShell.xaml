@@ -4,14 +4,14 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:SkinCareAiIntegration"
-     xmlns:androidSetup="clr-namespace:SkinCareAiIntegration.AndroidAiSetUp"
+     xmlns:ForAndroid="clr-namespace:SkinCareAiIntegration.ForAndroid"
 
     Shell.FlyoutBehavior="Disabled"
     Title="SkinCareAiIntegration">
 
     <ShellContent
       
-        ContentTemplate="{DataTemplate androidSetup:MainView}"
+        ContentTemplate="{DataTemplate ForAndroid:AndroidCameraView}"
         Route="MainPage" />
 
 </Shell>
