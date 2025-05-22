@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SkinCareAiIntegration.ForAndroid.CameraLivePage">
+
+    <Grid>
+        <!-- Camera Frame as Image -->
+        <Image x:Name="CameraImage" Aspect="AspectFill" />
+
+        <!-- Overlay for face count -->
+        <Label x:Name="FaceCountLabel"
+               Text="Faces Detected: 0"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"
+               TextColor="White"
+               BackgroundColor="Black"
+               Padding="10"/>
+    </Grid>
+</ContentPage>

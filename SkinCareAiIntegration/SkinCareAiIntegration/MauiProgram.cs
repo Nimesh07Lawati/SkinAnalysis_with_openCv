@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
-
+using CommunityToolkit.Maui;
+using CommunityToolkit.Maui.Camera;
 namespace SkinCareAiIntegration
 {
     public static class MauiProgram
@@ -8,7 +9,11 @@ namespace SkinCareAiIntegration
         {
             var builder = MauiApp.CreateBuilder();
             builder
+                
                 .UseMauiApp<App>()
+             .UseMauiCommunityToolkit()
+                 .UseMauiCommunityToolkitCamera()
+
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
