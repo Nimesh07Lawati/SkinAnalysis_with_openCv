@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using ZXing.Net.Maui.Controls;
+
 using CommunityToolkit.Maui.Camera;
 namespace SkinCareAiIntegration
 {
@@ -13,7 +15,7 @@ namespace SkinCareAiIntegration
                 .UseMauiApp<App>()
              .UseMauiCommunityToolkit()
                  .UseMauiCommunityToolkitCamera()
-
+                  .UseBarcodeReader()
                 .ConfigureFonts(fonts =>
                 {
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");

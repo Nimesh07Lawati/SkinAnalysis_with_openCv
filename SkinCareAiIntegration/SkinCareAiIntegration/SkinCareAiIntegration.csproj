@@ -63,6 +63,7 @@
 	<ItemGroup>
 	  <None Remove="data\RFB-320.bin" />
 	  <None Remove="data\RFB-320.param" />
+	  <None Remove="Resources\Raw\haarcascade_frontalface_default.xml" />
 	</ItemGroup>
 
 	<ItemGroup>
@@ -73,6 +74,7 @@
 	<ItemGroup>
 		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.1" />
 		<PackageReference Include="CommunityToolkit.Maui.Camera" Version="1.0.5" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
 		<PackageReference Include="Emgu.CV" Version="4.10.0.5680" />
 		<PackageReference Include="Emgu.CV.Bitmap" Version="4.10.0.5680" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
@@ -84,11 +86,18 @@
 		<PackageReference Include="OpenCvSharp4.Windows" Version="4.11.0.20250507" />
 		<PackageReference Include="System.Drawing.Common" Version="9.0.5" />
 		<PackageReference Include="UltraFaceDotNet.Xamarin" Version="1.0.0.2" />
+		<PackageReference Include="ZXing.Net.Maui" Version="0.4.0" />
+		<PackageReference Include="ZXing.Net.Maui.Controls" Version="0.4.0" />
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="opencv\*.dll">
 			<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
 		</None>
+	</ItemGroup>
+	<ItemGroup>
+	  <MauiAsset Update="Resources\Raw\haarcascade_frontalface_default.xml">
+	    <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	  </MauiAsset>
 	</ItemGroup>
 	<ItemGroup>
 		<None Update="haarcascade_frontalface_default.xml">
